@@ -4,7 +4,20 @@
 
 <th:block th:replace="~{layout/main::page(title='JiraRush: mini bugtracking system',appMain=~{::appMain})}">
     <appMain>
-        <h1>JiraRush Home page</h1>
+
+        <div>
+            <form action="">
+                <span th:text="#{lang.change}"></span>:
+                <select name="lang" onchange="this.form.submit()" >
+                    <option ></option>
+                    <option value="en" th:text="#{lang.en}" ></option>
+                    <option value="ru" th:text="#{lang.ru}"></option>
+                </select>
+            </form>
+        </div>
+
+        <h1 th:text="#{index.title}">JiraRush Home Page</h1>
+
         <div th:if="${authUser} != null">
             <form action="/ui/logout" method="post">
                 <button class="btn btn-primary btn-lg mt-3" type="submit">Logout</button>

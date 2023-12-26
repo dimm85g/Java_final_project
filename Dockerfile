@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM openjdk:19
 LABEL authors="Dima"
 WORKDIR app
 COPY target/*.jar app/jirarash.jar
